@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -23,26 +25,27 @@ public class HistogramGenerator {
 	/**
 	 * This method is used to read a file with grades.
 	 * 
-	 * @param gradesFilePath: The path of a file that contains the grades, as integers, written in different lines.
+	 * @param gradesFileName: The name of a file that contains the grades, as integers, written in different lines.
 	 * @return int[] An array with the grades
 	 * @exception FileNotFoundException
 	 * @exception IOException
 	 * @see FileNotFoundException
 	 * @see IOException
 	 */
-	 public static int[] readGradesFile(String gradesFilePath) throws FileNotFoundException, IOException{
-		 int linesOfFile = 150; // count the numbers of lines in the file with grades
-		 ClassLoader classLoader = HistogramGenerator.class.getClassLoader();
-		 File gradesFile = new File(classLoader.getResource(gradesFilePath).getFile()); // the file with the grades
+	 public static int[] readGradesFile(String gradesFileName) throws FileNotFoundException, IOException{
+		 int linesOfFile = countLinesOfFile(gradesFileName); // count the numbers of lines in the file with grades
 		 int[] grades = new int[linesOfFile]; // array of grades
-		 Scanner gradesReader = new Scanner(gradesFile); // the reader of the file with the grades
+		 
+		 InputStream in = HistogramGenerator.class.getResourceAsStream(gradesFileName); // input stream of the grades
+		 BufferedReader gradesReader = new BufferedReader((new InputStreamReader(in))); // reads the grades
+		 
+		 String gradeStr; // the grade read as a String
 		 int lineCounter = 0; // counts the lines that have been read
 		 
-	     while (gradesReader.hasNextLine()) {
-	        String grade = gradesReader.nextLine();
-	        grades[lineCounter] = Integer.parseInt(grade);
-	        lineCounter++;
-	     }
+		 while ((gradeStr = gradesReader.readLine()) != null) {
+			 grades[lineCounter] = Integer.parseInt(gradeStr); // add the grade to the grades array after it is turn to int
+		     lineCounter++;
+		 }
 	     
 	     gradesReader.close();
 		 return grades;
@@ -104,18 +107,18 @@ public class HistogramGenerator {
 	 
 	 /**
 		 * This method is used to count the number of lines in a file.
-		 * The code is from: https://stackoverflow.com/questions/1277880/how-can-i-get-the-count-of-line-in-a-file-in-an-efficient-way/1277904
+		 * The code based on: https://stackoverflow.com/questions/1277880/how-can-i-get-the-count-of-line-in-a-file-in-an-efficient-way/1277904
 		 * and the first answer from "Mnementh".
-		 * @param filePath: The path of a file.
+		 * @param fileName: The name of a file.
 		 * @return int The number of lines that the requested file contains.
 		 * @exception FileNotFoundException
 		 * @exception IOException
 		 * @see FileNotFoundException
 		 * @see IOException
 		 */
-	 public static int countLinesOfFile(String filePath) throws FileNotFoundException, IOException {
-		 ClassLoader classLoader = HistogramGenerator.class.getClassLoader();
-		 BufferedReader reader = new BufferedReader(new FileReader(classLoader.getResource(filePath).getFile()));
+	 public static int countLinesOfFile(String fileName) throws FileNotFoundException, IOException {
+		 InputStream in = HistogramGenerator.class.getResourceAsStream(fileName); // InputStream of the file
+		 BufferedReader reader = new BufferedReader((new InputStreamReader(in))); // reads the file
 		 int lines = 0;
 		 while (reader.readLine() != null) lines++;
 		 reader.close();
