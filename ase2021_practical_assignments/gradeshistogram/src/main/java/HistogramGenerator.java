@@ -1,9 +1,5 @@
-import java.io.File;
-
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -13,11 +9,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.statistics.HistogramDataset;
-import org.jfree.data.statistics.HistogramType;
+
 
 /**
  * HistogramGenerator class contains the methods that read a file with grades
@@ -96,7 +88,6 @@ public class HistogramGenerator {
 		boolean legend = false; // do not visualize a legend
 		boolean tooltips = false; // do not visualize tooltips
 		boolean urls = false; // do not visualize urls
-		boolean x_axis_title = false; // do not visualize x_axis_title;
 
 		// Declare and initialize a createHistogram JFreeChart
 		JFreeChart chart = ChartFactory.createHistogram("Grades histogram", "Grade", "Frequency", dataset,
