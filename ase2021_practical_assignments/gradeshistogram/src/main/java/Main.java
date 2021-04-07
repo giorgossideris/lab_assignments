@@ -5,7 +5,7 @@
  *
  */
 public class Main {
-	
+
 	/**
 	 * The main method of the project.
 	 * 
@@ -15,10 +15,10 @@ public class Main {
 		int[] grades = null;
 		try {
 			grades = HistogramGenerator.readGradesFile(args[0]); // read the file with the grades
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		HistogramGenerator.generateChart(grades); // generate the chart with the grades
+		HistogramGenerator.generateHistogram(grades); // generate the histogram with the grades
 	}
 
 }
