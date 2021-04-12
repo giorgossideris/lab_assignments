@@ -1,15 +1,15 @@
+package gradeshistogram;
+
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.FileReader;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-
 
 /**
  * HistogramGenerator class contains the methods that read a file with grades
@@ -19,7 +19,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 
 public class HistogramGenerator {
-	
+
 	/**
 	 * The main method of the project.
 	 * 
@@ -40,7 +40,8 @@ public class HistogramGenerator {
 	 * 
 	 * @param gradesFileName: The name of a file that contains the grades, as
 	 *                        integers in range [0, 10], written in different lines.
-	 * @return int[] An array with the grades frequencies, the cell i contains the frequency of the grade i.
+	 * @return int[] An array with the grades frequencies, the cell i contains the
+	 *         frequency of the grade i.
 	 * @exception FileNotFoundException
 	 * @exception IOException
 	 * @see FileNotFoundException
@@ -48,14 +49,13 @@ public class HistogramGenerator {
 	 */
 	public static int[] readGradesFile(String gradesFileName) throws FileNotFoundException, IOException {
 
-		InputStream in = HistogramGenerator.class.getResourceAsStream(gradesFileName); // input stream of the grades
-		BufferedReader gradesReader = new BufferedReader((new InputStreamReader(in))); // reads the grades
+		BufferedReader gradesReader = new BufferedReader((new FileReader(gradesFileName))); // reads the grades
 
 		String gradeStr; // the grade read as a String
 
 		int[] gradesFrequencies = new int[11]; // gradesFrequencies[i] contain the times that the grade i has appeared
-											   // grades in range [0, 10]
-		
+												// grades in range [0, 10]
+
 		// calculate the frequencies of grades
 		while ((gradeStr = gradesReader.readLine()) != null) {
 			int nextGrade = Integer.parseInt(gradeStr);
