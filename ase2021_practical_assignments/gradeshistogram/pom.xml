@@ -6,8 +6,8 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>gradeshistogram</artifactId>
-  <name>Child project </name>
-  <description>This is the child Maven project for the assignment</description>
+  <name>Histogram Generator</name>
+  <description>This maven project creates a histogram for the given file of grades</description>
   
   <dependencies>
 	  <!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->

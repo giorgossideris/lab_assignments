@@ -4,8 +4,11 @@
   <artifactId>ase2021_practical_assignments</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Parent project </name>
-  <description>This is the parent Maven project for the assignment</description>
+  <name>Assignments of Applied Software Engineering's labs</name>
+  <description>
+  	This is the Maven project that contains the assignmets for the labs 
+  	of the subject "Applied Software Engineering"
+  </description>
   
   <modules>
   	<module>gradeshistogram</module>
