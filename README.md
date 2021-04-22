@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/giorgossideris/lab_assignments.svg?token=MMr6Hepy3ETDrm4TaxdD&branch=development)](https://travis-ci.com/giorgossideris/lab_assignments)
 # lab_assignments
 
 ## Purpose
@@ -15,3 +16,6 @@ The tools used in this repository and necessary to build it are:
 4. **Run the jars:**
    1. In order to run the jar for HistogramGenerator execute the command 
   `java -jar gradeshistogram/target/gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar gradeshistogram/src/main/resources/grades.txt`
+  
+## Notes
+1. unittesting module refers to practice on Unit Testing and you can read more about it [here](https://github.com/giorgossideris/lab_assignments/blob/development/unittesting/README.md)
