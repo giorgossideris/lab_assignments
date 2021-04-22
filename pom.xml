@@ -12,5 +12,6 @@
   
   <modules>
   	<module>gradeshistogram</module>
+  	<module>unittesting</module>
   </modules>
 </project>
