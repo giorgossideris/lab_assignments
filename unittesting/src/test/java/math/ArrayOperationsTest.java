@@ -12,6 +12,7 @@ public class ArrayOperationsTest {
 
 	ArrayOperations arrayOperations = new ArrayOperations();
 	FileIO fileIO = new FileIO();
+	MyMath myMath = new MyMath();
 	
 	@Test
 	public void testFindPrimesInFileValid() {
@@ -38,14 +39,34 @@ public class ArrayOperationsTest {
 	public void testFindPrimesInFileNonExistentFile() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Input file does not exist");
-		fileIO.readFile("src/test/resources/non_existent.txt");
+		arrayOperations.findPrimesInFile(fileIO, "src/test/resources/non_existent.txt", myMath);
 	}
 	
 	@Test
 	public void testFindPrimesInFileEmptyFile() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Given file does not contain any valid values");
-		fileIO.readFile("src/test/resources/empty.txt");
+		arrayOperations.findPrimesInFile(fileIO, "src/test/resources/empty.txt", myMath);
+	}
+	
+	@Test
+	public void testFindPrimesInFileNumberLessThan2() {
+		
+		FileIO fio = mock(FileIO.class);
+		when(fio.readFile("numbers.txt")).thenReturn(new int[] {-2, 5, 1, 0, 7});
+		
+		int[] expectedNumbers = new int[] {5, 7};
+		Assert.assertArrayEquals(expectedNumbers, arrayOperations.findPrimesInFile(fio, "numbers.txt", myMath));
+	}
+	
+	@Test
+	public void testFindPrimesInFileNoPrimes() {
+		
+		FileIO fio = mock(FileIO.class);
+		when(fio.readFile("numbers.txt")).thenReturn(new int[] {-2, 0, 4, 20});
+		
+		int[] expectedNumbers = new int[] {};
+		Assert.assertArrayEquals(expectedNumbers, arrayOperations.findPrimesInFile(fio, "numbers.txt", myMath));
 	}
 	
 	
