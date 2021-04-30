@@ -63,8 +63,6 @@ public class ArithmeticOperationsTest {
 		Assert.assertEquals(0, arithmeticOperations.multiply(0, 100), 0.000001);
 	}
 	
-	//NOTE: these 2 tests raise error but they shouldn't (it is because of division with 0)
-	/*
 	@Test
 	public void test_multiply_positive_zero() {
 		Assert.assertEquals(0, arithmeticOperations.multiply(1, 0), 0.000001);
@@ -74,8 +72,7 @@ public class ArithmeticOperationsTest {
 	public void test_multiply_zero_zero() {
 		Assert.assertEquals(0, arithmeticOperations.multiply(0, 0), 0.000001);
 	}
-	*/
-	
+
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	
