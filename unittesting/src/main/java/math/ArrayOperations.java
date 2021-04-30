@@ -15,11 +15,16 @@ public class ArrayOperations {
 	 * @param myMath an instance of the class MyMath
 	 * @return an array of the prime numbers in the requested file
 	 * @exception IllegalArgumentException when the given file does not exist
-	 * @exception IllegalArgumentException when the given file is empty
+	 * @exception IllegalArgumentException when the given file does not contain any valid values
 	 */
 	public int[] findPrimesInFile(FileIO fileIo, String filePath, MyMath myMath) {
+		int[] numbersInFile;
+		try {
+			numbersInFile = fileIo.readFile(filePath);
+		} catch (IllegalArgumentException iae) {
+			throw iae;
+		}
 		
-		int[] numbersInFile = fileIo.readFile(filePath);
 		List<Integer> primesList = new ArrayList<>();
 		
 		for (int number : numbersInFile) {
