@@ -2,6 +2,9 @@ package math;
 
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import math.MyMath;
+
 import org.junit.Assert;
 import org.junit.Rule;
 
@@ -15,14 +18,14 @@ public class MyMathTest {
 	//==============tests for factorial()=================
 	
 	@Test 
-	public void test_factorial_negative() {
+	public void testFactorialNegative() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("n should be >= 0");
 		myMath.factorial(-1);
 	}
 	
 	@Test 
-	public void test_factorial_large() {
+	public void testFactorialLarge() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("n should be <= 12");
 		myMath.factorial(13);

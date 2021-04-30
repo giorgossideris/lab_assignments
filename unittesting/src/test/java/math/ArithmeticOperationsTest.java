@@ -12,37 +12,37 @@ public class ArithmeticOperationsTest {
 	//============ tests for divide() ================
 	
 	@Test
-	public void test_divide_positive_positive_integerResult() {
+	public void testDividPositivePositiveIntegerResult() {
 		Assert.assertEquals(2, arithmeticOperations.divide(6, 3), 0.000001);
 	}
 	
 	@Test
-	public void test_divide_positive_positive_doubleResult() {
+	public void testDividePositivePositiveDoubleResult() {
 		Assert.assertEquals(2.5, arithmeticOperations.divide(10, 4), 0.000001);
 	}
 	
 	@Test
-	public void test_divide_positive_negative_integerResult() {
+	public void testDividePositiveNegativeIntegerResult() {
 		Assert.assertEquals(-3, arithmeticOperations.divide(9, -3), 0.000001);
 	}
 	
 	@Test
-	public void test_divide_positive_negative_doubleResult() {
+	public void testDividePositiveNegativeDoubleResult() {
 		Assert.assertEquals(-2.2, arithmeticOperations.divide(11, -5), 0.000001);
 	}
 	
 	@Test
-	public void test_divide_negative_positive_integerResult() {
+	public void test_divideNegativePositiveIntegerResult() {
 		Assert.assertEquals(-10, arithmeticOperations.divide(-20, 2), 0.000001);
 	}
 	
 	@Test
-	public void test_divide_negative_positive_doubleResult() {
+	public void testDivideNegativePositiveDoubleResult() {
 		Assert.assertEquals((double) -10/3, arithmeticOperations.divide(-20, 6), 0.000001);
 	}
 	
 	@Test
-	public void test_zero_numerator() {
+	public void testZeroNumerator() {
 		Assert.assertEquals(0, arithmeticOperations.divide(0, 2), 0.000001);
 	}
 	
@@ -54,22 +54,22 @@ public class ArithmeticOperationsTest {
 	//=============== tests for multiply() ================
 	
 	@Test
-	public void test_multiply_positiveInt_positiveInt() {
+	public void testMultiplyPositiveIntPositiveInt() {
 		Assert.assertEquals(35, arithmeticOperations.multiply(5, 7), 0.000001);
 	}
 	
 	@Test
-	public void test_multiply_zero_positive() {
+	public void testMultiplyZeroPositive() {
 		Assert.assertEquals(0, arithmeticOperations.multiply(0, 100), 0.000001);
 	}
 	
 	@Test
-	public void test_multiply_positive_zero() {
+	public void testMultiplyPositiveZero() {
 		Assert.assertEquals(0, arithmeticOperations.multiply(1, 0), 0.000001);
 	}
 	
 	@Test
-	public void test_multiply_zero_zero() {
+	public void testMultiplyZeroZero() {
 		Assert.assertEquals(0, arithmeticOperations.multiply(0, 0), 0.000001);
 	}
 
@@ -77,28 +77,28 @@ public class ArithmeticOperationsTest {
 	public ExpectedException thrown = ExpectedException.none();
 	
 	@Test 
-	public void test_multiply_negativeInt_positiveInt() {
+	public void testMultiplyNegativeIntPositiveInt() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		arithmeticOperations.multiply(-1, 3);
 	}
 	
 	@Test 
-	public void test_multiply_positiveInt_negativeInt() {
+	public void testMultiplyPositiveIntNegativeInt() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		arithmeticOperations.multiply(2, -1);
 	}
 	
 	@Test 
-	public void test_multiply_negativeInt_negativeInt() {
+	public void testMultiplyNegativeIntNegativeInt() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		arithmeticOperations.multiply(-1, -1);
 	}
 	
 	@Test
-	public void test_multiple_bigNumbers() {
+	public void testMultiplyBigNumbers() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The product does not fit in an Integer variable");
 		final int BIG_NUMBER_1 = (int) Integer.MAX_VALUE / 2, BIG_NUMBER_2 = (int) Integer.MAX_VALUE / 3;
