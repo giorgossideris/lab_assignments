@@ -38,15 +38,19 @@ public class FileIO {
 			reader = new BufferedReader(new FileReader(file));
 			String line = null;
 			while ((line = reader.readLine()) != null) {
-				int number = Integer.parseInt(line);
-				numbersList.add(number);
+				try {
+					int number = Integer.parseInt(line);
+					numbersList.add(number);
+				}catch (NumberFormatException nfe) {
+					continue;
+				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		if (numbersList.size() == 0) 
-			throw new IllegalArgumentException("Given file is empty");
+			throw new IllegalArgumentException("Given file does not contain any valid values");
 		
 		// Convert a List to an array using 
 		return numbersList.stream().mapToInt(i -> i).toArray();
