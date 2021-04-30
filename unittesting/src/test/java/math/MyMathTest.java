@@ -12,6 +12,8 @@ public class MyMathTest {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	
+	//==============tests for factorial()=================
+	
 	@Test 
 	public void test_factorial_negative() {
 		thrown.expect(IllegalArgumentException.class);
@@ -26,4 +28,26 @@ public class MyMathTest {
 		myMath.factorial(13);
 	}
 
+	//==================tests for isPrime()==================
+	
+	@Test
+	public void testIsPrimeOne() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("n should be >= 2");
+		myMath.isPrime(1);
+	}
+	
+	@Test
+	public void testIsPrimeZero() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("n should be >= 2");
+		myMath.isPrime(0);
+	}
+	
+	@Test
+	public void testIsPrimeNegative() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("n should be >= 2");
+		myMath.isPrime(-1);
+	}
 }
