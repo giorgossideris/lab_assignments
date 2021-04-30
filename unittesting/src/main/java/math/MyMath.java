@@ -28,4 +28,22 @@ public class MyMath {
 			throw new IllegalArgumentException("n should be <= 12");		
 		}
 	}
+	
+	/**
+	 * Checks if the given number is prime.
+	 * @param n the input
+	 * @return true if <b>n</b> is prime, else false
+	 * @exception IllegalArgumentException when <b>n</b> is less than 2
+	 */
+	public boolean isPrime(int n) {
+		if (n < 2) {
+			throw new IllegalArgumentException("n should be >= 2");
+		}
+		for (int divisor = 2; divisor < n; divisor++) {
+			if (n % divisor == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
