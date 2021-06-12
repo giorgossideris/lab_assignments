@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import facades.AnalyzeManagement;
 
-public class DemoClient2 {
+public class DemoClient {
 	public static void main(String[] args) throws IOException {
 		String filepath = "src/main/resources/TestClass.java";
 		String sourceCodeAnalyzerType = "regex";
