@@ -19,3 +19,4 @@ The tools used in this repository and necessary to build it are:
   
 ## Notes
 1. unittesting module refers to practice on Unit Testing and you can read more about it [here](https://github.com/giorgossideris/lab_assignments/blob/development/unittesting/README.md)
+2. In case you want to get a report for the test covery of each module execute the command `mvn package jacoco:report` (from the parent folder). The results can be found in the path: **target/site/jacoco/index.html** of each module (*Caution:* the report will be produced only if tests are run in the particular module).
