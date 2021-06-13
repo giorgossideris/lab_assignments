@@ -13,13 +13,13 @@ The tools used in this repository and necessary to build it are:
 2. **Move into this module:** Execute the command `cd lab_assignments/sourcecodeanalyzer`
 3. **Build the module:** Execute the command `mvn package jacoco:report`
 4. **Run the jar:** Execute the command `java –jar “jar-with-dependencies” arg0 arg1 arg2 arg3 arg4` were args translate to: 	
-	arg0 = “JavaSourceCodeInputFile” (e.g., src/test/resources/TestClass.java)
-	arg1 = “sourceCodeAnalyzerType” [regex|strcomp]
-	arg2 = “SourceCodeLocationType” [local|web]
-	arg3 = “OutputFilePath” (e.g., ../output_metrics_file)
-	arg4 = “OutputFileType” [csv|json]
-   	example: 
-	java –jar ./target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./src/test/resources/TestClass.java regex local metrics_results csv
+    * arg0 = “JavaSourceCodeInputFile” (e.g., src/test/resources/TestClass.java)
+    * arg1 = “sourceCodeAnalyzerType” [regex|strcomp]
+    * arg2 = “SourceCodeLocationType” [local|web]
+    * arg3 = “OutputFilePath” (e.g., ../output_metrics_file)
+    * arg4 = “OutputFileType” [csv|json]  
+   example: `java -jar target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./src/test/resources/TestClass.java regex local metrics_results csv`
+
 
 ## Class diagram
 The class diagram that represent the system of this module can be found at [ase_4th_assignment_uml Class diagram.png](https://github.com/giorgossideris/lab_assignments/blob/development/sourcecodeanalyzer/ase_4th_assignment_uml%20Class%20diagram.png) (it may be necessary to open it to new tab, to be shown correctly).
