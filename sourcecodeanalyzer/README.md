@@ -22,7 +22,7 @@ The tools used in this repository and necessary to build it are:
 	java –jar ./target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./src/test/resources/TestClass.java regex local metrics_results csv
 
 ## Class diagram
-The class diagram that represent the system of this module can be found at **ase_4th_assignment_uml Class diagram.png**.
+The class diagram that represent the system of this module can be found at [ase_4th_assignment_uml Class diagram.png](https://github.com/giorgossideris/lab_assignments/blob/development/sourcecodeanalyzer/ase_4th_assignment_uml%20Class%20diagram.png) (it may be necessary to open it to new tab, to be shown correctly).
 
 ## <a name="design-patterns"></a>Design Patterns Used
 In this section the Design Patterns used will be presented.
