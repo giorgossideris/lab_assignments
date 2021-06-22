@@ -24,5 +24,10 @@ before_script:  # Run commands
 script:   # Build the project  
 - mvn clean package jacoco:report
 
+after_script: # Test the whole sourcecodeanalyzer module
+- cd sourcecodeanalyzer
+- java -jar target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+- diff output_metrics.csv src/main/resources/manual_output_metrics.csv || exit 1
+
 after_success:   # Notify users about the result 
 - echo "Process terminated successfully"
