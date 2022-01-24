@@ -1,7 +1,7 @@
 # sourcecodeanalyzer
 
 ## Purpose
-This modules serves as a hands-on practice on Design Principles and Patterns. More about the Design Patterns can be found in section [Design Patterns Used](#design-patterns)
+This module serves as a hands-on practice on Design Principles and Patterns. More about the Design Patterns can be found in section [Design Patterns Used](#design-patterns)
 
 ## Tools
 The tools used in this repository and necessary to build it are:
